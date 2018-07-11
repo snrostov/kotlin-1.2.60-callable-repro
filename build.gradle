@@ -1,0 +1,30 @@
+plugins {
+//    id 'org.jetbrains.kotlin.jvm' version '1.2.60-eap-7'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60-eap-27'
+//    id 'org.jetbrains.kotlin.jvm' version '1.2.60-eap-44'
+}
+
+apply plugin: 'application'
+
+group 'samples.reflection'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {     url 'http://dl.bintray.com/kotlin/kotlin-eap' }
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.jetbrains.kotlin:kotlin-reflect"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+mainClassName = "sample.TestKt"
